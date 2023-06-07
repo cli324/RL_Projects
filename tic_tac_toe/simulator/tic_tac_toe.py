@@ -70,7 +70,7 @@ class TicTacToe:
                 self.game_outcome = 2
 
         # Checking if the board is full
-        if np.sum(np.abs(self._state)) == 9:
+        if not self.game_over and np.sum(np.abs(self._state)) == 9:
             self.game_over = True
             self.game_outcome = 0
 
