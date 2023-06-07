@@ -5,8 +5,8 @@ import threading
 
 class TicTacToe:
     def __init__(self):
-        self._initial_state = np.zeros((3, 3))
-        self._state = self._initial_state
+        self._initial_state = np.zeros((3, 3), dtype=int)
+        self._state = self._initial_state.copy()
 
         self.player_one_state_history = []
         self.player_one_action_history = []
@@ -93,7 +93,7 @@ class TicTacToe:
         plt.show()
 
     def reset(self):
-        self._state = self._initial_state
+        self._state = self._initial_state.copy()
 
         self.player_one_state_history = []
         self.player_one_action_history = []
