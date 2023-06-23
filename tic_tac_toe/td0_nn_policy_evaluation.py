@@ -21,7 +21,7 @@ def random_policy(state):
     return action
 
 
-def interactive_policy(state, simulator, value_function, is_player_one):
+def interactive_policy(state, simulator, is_player_one):
     print(f"Current state: {state}")
 
     # Printing value of the state
@@ -233,8 +233,8 @@ plt.show()
 
 
 #Interactive games of tic tac toe to view value function
-player_one_policy = lambda state : interactive_policy(state, game, model, True)
-player_two_policy = lambda state : interactive_policy(state, game, model, False)
+player_one_policy = lambda state : interactive_policy(state, game, True)
+player_two_policy = lambda state : interactive_policy(state, game, False)
 while True:
     game.reset()
     game.simulate_episode(player_one_policy, player_two_policy)
